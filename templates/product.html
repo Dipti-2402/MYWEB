@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Application</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  <script src="https://kit.fontawesome.com/fd8e947f91.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+   
+</head>
+<body background="/static/images/products.jpg">
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo"><i class="fa-solid fa-gem"></i>WELCOME
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navMenu">
+        <a href="{{url_for('index')}}" >Home</a>
+        <a href="{{url_for('tech')}}" >Tech</a>
+        <a href="{{url_for('products')}}"  >Product</a>
+        <a href="{{url_for('signup')}}" class="active">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Product Section -->
+  <main>
+    <section class="product-section">
+      <h1>Our Products</h1>
+      <div class="product-grid">
+        {% for product in products %}
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/black-headphones.jpg') }}" alt="VR Headset">
+          <h3>Product 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button>Buy Now</button>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/headset.jpg')}}">
+          <h3>Product 2</h3>
+          <p>Quisque vel urna a arcu vehicula consectetur.</p>
+          <button>Buy Now</button>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/hearing-aids.jpg') }}">
+          <h3>Product 3</h3>
+          <p>Pellentesque habitant morbi tristique senectus.</p>
+          <button>Buy Now</button>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3>Application</h3>
+        <p>Your one-stop solution for everything you need!</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tech.html">Tech</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Application. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="{{ url_for('static', filename='js/app.js')}}">
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.style.display = 'flex';
+      }
+    }
+  </script>
+</body>
+</html>

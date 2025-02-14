@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  <script src="{{ url_for('static', filename='js/script.js')}}" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/fd8e947f91.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body background="static/images/signup.jpg">
+  <header>
+    <div class="header-container">
+      <div class="logo"><i class="fa-solid fa-gem"></i>WELCOME</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <nav class="nav-links">
+        <a href="{{url_for('index')}}" >Home</a>
+        <a href="{{url_for('tech')}}" >Tech</a>
+        <a href="{{url_for('products')}}" >Product</a>
+        <a href="{{url_for('signup')}}"  class="active">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="signup-container">
+      <h1>Sign Up</h1>
+      <p>Create an account to access exclusive features.</p>
+      <form class="signup-form" action="/signup" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <p class="login-link">Already have an account? <a href="{{url_for('login')}}" >Login here</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3>Application</h3>
+        <p>Your one-stop solution for everything you need!</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tech.html">Tech</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Application. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
