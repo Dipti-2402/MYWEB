@@ -52,8 +52,12 @@ def signup():
 
 @app.route('/products')
 def products():
-    all_products = Product.query.all()
-    return render_template('product.html', products=all_products)
+    products = [
+        {"name": "VR Headset", "image": "vr1.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"name": "Headset", "image": "headset.jpg", "description": "Quisque vel urna a arcu vehicula."},
+        {"name": "Hearing Aids", "image": "hearing-aids.jpg", "description": "Pellentesque habitant morbi tristique."}
+    ]
+    return render_template('products.html', products=products)
 @app.route('/tech')
 def tech():
     return render_template('tech.html')
